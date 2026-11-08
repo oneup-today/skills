@@ -39,6 +39,7 @@ Run install-free with `npx @oneup_today/cli <command>`, or `oneup <command>` if 
 - `oneup socials list [--platform reddit|x]` - connected accounts and their `social_id`s.
 - `oneup products list` - you need a `product_id` to create a campaign.
 - `oneup docs "<question>" [--page /connections]` - search OneUp Today's own help docs. Use it for "how does OneUp Today do X" or "what does this setting mean", not for the user's data.
+- `oneup prompt upgrade "<prompt>"` - rewrite a prompt so it works better, adding context from the user's connected database when it helps.
 - `oneup readiness [--platform reddit] [--social <id>]` - see "Readiness" below.
 
 ## Writes (mutate or send - confirm with the user first)
