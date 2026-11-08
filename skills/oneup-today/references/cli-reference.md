@@ -270,6 +270,24 @@ one article ($0.99). Rank tracking is billed MONTHLY per site, so reading ranks 
 - `oneup seo ask <site_id> "<question>"` - keyword-strategy Q&A, free.
 - `oneup seo create --type <t> --name "..." --product <id>`, plus `pause`/`resume`/`verify`.
 
+## Content Agent (`oneup content ...`) - plan, review and approve posts
+
+The Content Agent plans a week of posts for the user's accounts. Nothing it writes publishes until
+the user approves it. Get the `agent_id` from `oneup campaigns list`.
+- `oneup content week <agent_id> [--week next|current]` - the week plan: ideas per day and the posts
+  planned for each account.
+- `oneup content review <agent_id> [--day <epoch>]` - the posts waiting for today's review, with what
+  approving them costs. Start here.
+- `oneup content approve <agent_id> [--items id1,id2] [--day <epoch>]` - COSTS. Approved posts publish
+  at their planned times. Without `--items` it approves every ready post of the day.
+- `oneup content edit <agent_id> <item_id> [--text "..."] [--title "..."] [--subreddit name]` - change
+  a post waiting for review; it publishes exactly as typed.
+- `oneup content storyboard <agent_id> <item_id> --note "tighter cut" [--beat N]` - change a video
+  before approving it, in plain words. The agent revises the storyboard and renders it again.
+- `oneup content pull <agent_id> <item_id>` - take one post out. After approval this removes its
+  scheduled post, with no refund.
+- `oneup content results <agent_id> [--weeks N]` - what was published and how it did (1 to 12 weeks).
+
 ## Your posts (`oneup posts ...`) - the Content Agent's output
 
 `oneup post` (singular) CREATES a post. `oneup posts` (plural) READS what already exists. Anything
